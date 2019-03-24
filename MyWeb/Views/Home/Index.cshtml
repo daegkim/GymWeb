@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+    <title>운동이 급할때</title>
+    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Contents/img/favicon2.ico" />
+    <style>
+        @@font-face {
+            font-family: 'NanumGothic';
+            src: url('../../Contents/font/NanumGothic.ttf') format('truetype');
+        }
+
+        @@font-face {
+            font-family: 'NanumGothicBold';
+            src: url('../../Contents/font/NanumGothicBold.ttf') format('truetype');
+        }
+
+        @@font-face {
+            font-family: 'NanumGothicExtraBold';
+            src: url('../../Contents/font/NanumGothicExtraBold.ttf') format('truetype');
+        }
+
+        html, body {
+            font-family: 'NanumGothic';
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            background-color: #808080;
+            background-image: url('../../Contents/img/court.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .main_content {
+            /*
+            background-image: url('../../Contents/img/background.jpg');
+            background-repeat:no-repeat;
+            */
+        }
+
+        .slider {
+            width: 1360px;
+            height: 460px;
+            overflow: hidden;
+            position: relative;
+            top: 350px;
+            margin: 0 auto;
+        }
+
+        .slider > ul {
+            width: 1700px;
+            position: absolute;
+            padding: 0px;
+            top: 60px;
+            left: 0;
+            font-size: 0;
+        }
+
+        .slider > ul > li {
+            display: inline;
+            float: left;
+        }
+
+        .slider_menu {
+            float: right;
+            margin-right: 25px;
+        }
+
+        .slider_content {
+            width: 300px;
+            height: 400px;
+            border-radius: 15px 15px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: #fffce1;
+        }
+
+        .slider_content img {
+            width: 260px;
+            height: 180px;
+            margin-bottom: 20px;
+            border-radius: 15px 15px;
+        }
+
+        .slider_content p {
+            font-size: 20px !important;
+        }
+
+        #ad_title {
+            font-family: "NanumGothicBold" !important;
+            text-align: center;
+            font-size: 50px !important;
+            color: white;
+            position: relative;
+            top: 200px;
+        }
+
+        .nav-header {
+            background-color: #303030;
+            height: 75px;
+            padding-top: 20px;
+            padding-left: 280px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-header ul li {
+            display: inline-block;
+            margin-right: 50px;
+        }
+
+        .nav-header > ul > li > a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-title {
+            font-size: 23px;
+            margin-right: 600px;
+        }
+
+        .nav-content {
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-header">
+        <ul>
+            <li>
+                <a class="nav-title" href="http://localhost:3710/Home/Index">
+                    <img id="title_img"src="~/Contents/img/soccerball.png" style="width:35px; height:35px; margin-right: 10px;"/>운동이 급할때
+                </a></li>
+            <li><a class="nav-content" href="http://localhost:3710/Home/Register">대관신청</a></li>
+            <li><a class="nav-content" href="#">소통창구</a></li>
+            <li><a class="nav-content" href="#">마이 페이지</a></li>
+            <li><a class="nav-content" href="#">로그인</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="content main_content">
+        <h1 id="ad_title" style="text-align: center; font-size: 60px;">급할때가 추천하는 체육관!</h1>
+        <div class="slider">
+            <div class="slider_menu">
+                <img id="btn_prev" src="~/Contents/img/btn_prev.png" style="background-color: #ffffff" />
+                <img id="btn_ps" src="~/Contents/img/btn_pause.png" style="background-color: #ffffff" />
+                <img id="btn_next" src="~/Contents/img/btn_next.png" style="background-color: #ffffff" />
+            </div>
+            <ul>
+                <li>
+                    <div class="slider_content">
+                        <img src="~/Contents/img/KBS체육관.jpg" />
+                        <p>KBS 체육관</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider_content">
+                        <img src="~/Contents/img/고인돌체육관.jpg" />
+                        <p>고인돌체육관</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider_content">
+                        <img src="~/Contents/img/광남체육관.jpg" />
+                        <p>광남체육관</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider_content">
+                        <img src="~/Contents/img/대현체육관.jpg" />
+                        <p>대현체육관</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="slider_content">
+                        <img src="~/Contents/img/베노체육관.jpg" />
+                        <p>베노체육관</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="~/Contents/script/jquery-3.3.1.js"></script>
+    <script src="~/Contents/script/bootstrap.min.js"></script>
+    <!-- Script with JQuery -->
+    <script type="text/javascript">
+
+        var isStop = false;
+        var interval = null;
+        var chgBall = 2;
+
+        window.onload = () => {
+            startSlide();
+            setInterval(() => {
+                if (chgBall == 0) {
+                    $('#title_img').attr('src', '/Contents/img/basketball.png');
+                    chgBall = 1;
+                }
+                else if (chgBall == 1) {
+                    $('#title_img').attr('src', '/Contents/img/volleyball.png');
+                    chgBall = 2;
+                }
+                else if (chgBall == 2) {
+                    $('#title_img').attr('src', '/Contents/img/soccerball.png');
+                    chgBall = 0;
+                }
+
+            }, 5000);
+        }
+
+        function startSlide() {
+            interval = setInterval(() => {
+                $('.slider ul').animate(
+                    { left: "-=340px" },
+                    () => {
+                        $('.slider ul').append($('.slider ul li').first());
+                        $('.slider ul').css({ 'left': '0px' });
+                    }
+                );
+            }, 3000);
+        }
+
+        function stopSlide() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        $(document).ready(() => {
+            $('#btn_next').click(() => {
+                $('.slider ul').animate(
+                    { left: "-=340px" },
+                    () => {
+                        $('.slider ul').append($('.slider ul li').first());
+                        $('.slider ul').css({ 'left': '0px' });
+                    }
+                );
+            });
+
+            $('#btn_prev').click(() => {
+                $('.slider ul').prepend($('.slider ul li').last());
+                $('.slider ul').css({ 'left': '-340px' });
+                $('.slider ul').animate(
+                    { left: "+=340px" },
+                    () => {
+                        $('.slider ul').css({ 'left': '0px' });
+                    }
+                );
+            });
+
+            $('#btn_ps').click(() => {
+                if (!isStop) {
+                    $('#btn_ps').attr('src', '/Contents/img/btn_play.png');
+                    stopSlide();
+                }
+                else {
+                    $('#btn_ps').attr('src', '/Contents/img/btn_pause.png');
+                    startSlide();
+                }
+                isStop = !isStop;
+            });
+        });
+    </script>
+</body>
+</html>
