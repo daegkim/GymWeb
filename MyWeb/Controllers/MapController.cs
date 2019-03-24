@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -11,9 +12,7 @@ namespace MyWeb.Controllers
     {
         public string GetGyms(string x, string y)
         {
-            Debug.WriteLine(x + y);
-            return "[{\"x\":\"126.973473\",\"y\":\"37.554780\",\"place_name\":\"남대문 경찰서\",\"addr\":\"서울특별시 중구 남대문로5가 한강대로 410\"}," +
-                "{\"x\":\"126.973407\",\"y\":\"37.555210\",\"place_name\":\"건강보험공단\",\"addr\":\"서울특별시 중구 남대문로5가 541\"}]";
+            return new MapDAO().GetGymsByLocation(x, y);
         }
     }
 }
